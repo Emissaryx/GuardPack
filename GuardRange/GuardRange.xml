@@ -1,0 +1,125 @@
+<Interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Interface.xsd">
+   <Scripts>
+      <Script file="GuardRange.lua" />
+   </Scripts>
+   <Windows>
+      <Window name="GuardRange_Window0" handleinput="true" savesettings="true" movable="false" popable="true">
+         <Size>
+            <AbsPoint x="250" y="35" />
+         </Size>
+		 <Anchors>
+            <Anchor point="center" relativePoint="center" relativeTo="Root">
+               <AbsPoint x="0" y="40" />
+            </Anchor>
+         </Anchors>
+         <Windows>
+		 
+					<Label name="$parentLabel" textalign="left" font="font_clear_medium_bold" layer="overlay" autoresizewidth="true"  autoresizeheight="true" autoresize="true" handleinput="false">
+								<EventHandlers>
+									<EventHandler event="OnHyperLinkLButtonUp" function="EA_ChatWindow.OnHyperLinkLButtonUp" />
+									<EventHandler event="OnHyperLinkRButtonUp" function="EA_ChatWindow.OnHyperLinkRButtonUp" />
+									</EventHandlers>
+                    <Size><AbsPoint x="300" y="32" /></Size>
+                    <Anchors><Anchor point="center" relativePoint="center" relativeTo="$parent"><AbsPoint x="0" y="3" /></Anchor></Anchors>
+					</Label>	
+					
+					
+					
+					<Label name="$parentLabelBG" textalign="left" font="font_clear_medium_bold" layer="secondary" autoresizewidth="true"  autoresizeheight="true" autoresize="true" handleinput="false">					
+                    <Size><AbsPoint x="300" y="32" /></Size>
+                    <Anchors><Anchor point="top" relativePoint="top" relativeTo="$parentLabel"><AbsPoint x="2" y="2" /></Anchor></Anchors>
+					<Color r="0" g="0" b="0" a="0.8" /> 
+					</Label>			 
+		 
+		 
+	  						<Button name="$parentShield" handleinput="true" inherits="EA_Button_Default" backgroundtexture="EA_Training_Specialization" highlighttexture="EA_Training_Specialization"  textureScale="0.62" layer="overlay" drawchildrenfirst="false">
+						<Anchors><Anchor point="left" relativePoint="right" relativeTo="$parentLabel"><AbsPoint x="3" y="-2" /></Anchor></Anchors>          					
+					<Size><AbsPoint x="36" y="36" /></Size>					   
+								<TexSlices>
+								<Normal          id="morale-white"   />
+								<NormalHighlit   id="morale-white"   />
+								<Pressed         id="morale-white"  />
+								<PressedHighlit  id="morale-white"  />
+								<Disabled        id="morale-white"   />
+								<DisabledPressed id="morale-white"  />
+							</TexSlices>
+							<Windows>
+								<CircleImage name="$parentIcon" textureScale="0.35" numsegments="32"  texture="" layer="overlay" sticky="true" handleinput="false" popable="false">
+								<Size><AbsPoint x="21" y="21" /></Size>
+								<Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo="$parent"><AbsPoint x="7" y="10" /></Anchor></Anchors>          
+								<TexCoords x="0" y="0" />
+								</CircleImage>									
+							</Windows>
+						</Button>
+	  
+	  				<AnimatedImage name="$parentGlow" inherits="EA_MoraleButtonAnimation" fps="13" layer="default" texture="anim_morale_glow" textureScale="0.6" alpha="1" handleinput="false">
+					<Size>
+					<AbsPoint x="65" y="65"/>
+					</Size>
+					<Anchors>
+					<Anchor relativePoint="topleft" point="topleft" relativeTo="$parentShield">
+					<AbsPoint x="-20" y="-20" />
+					</Anchor>
+					</Anchors>
+					</AnimatedImage>	
+
+
+	  <!--
+	  					<Label name="$parentLabel" font="font_clear_medium_bold" handleinput="false" wordwrap="true" autoresize="true" autoresizewidth="true" textalign="left" layer="overlay" >
+									<EventHandlers>
+									<EventHandler event="OnHyperLinkLButtonUp" function="EA_ChatWindow.OnHyperLinkLButtonUp" />
+									<EventHandler event="OnHyperLinkRButtonUp" function="EA_ChatWindow.OnHyperLinkRButtonUp" />
+									</EventHandlers>
+						<Size>
+	                    <AbsPoint x="250" y="32"/>
+						</Size>
+						<Anchors>
+				        <Anchor point="right" relativePoint="left" relativeTo="$parentShield">
+						<AbsPoint x="2" y="3"/>
+				        </Anchor>
+						</Anchors>
+						</Label>
+		  			
+	  					<Label name="$parentLabelBG" font="font_clear_medium_bold" handleinput="false" wordwrap="true" autoresize="true" autoresizewidth="true" textalign="left" layer="default" >
+						<Size>
+	                    <AbsPoint x="250" y="32"/>
+						</Size>
+						<Anchors>
+				        <Anchor point="topleft" relativePoint="topleft" relativeTo="$parentLabel">
+						<AbsPoint x="2" y="2"/>
+				        </Anchor>
+						</Anchors>
+						<Color r="0" g="0" b="0" a="0.8" />
+						</Label>					
+				
+						<Label name="$parentText2" font="font_clear_medium_bold" handleinput="false" textalign="center" layer="overlay" >
+						<Size>
+	                    <AbsPoint x="300" y="32"/>
+						</Size>
+						<Anchors>
+				        <Anchor point="bottom" relativePoint="top" relativeTo="$parentText">
+						<AbsPoint x="0" y="0"/>
+				        </Anchor>
+						</Anchors>
+						</Label>
+					
+		<FullResizeImage name="$parentBG" inherits="EA_FullResizeImage_TintableSolidBackground" layer="default" alpha="0.3" handleinput="false">        
+	<Anchors><Anchor point="topleft" relativePoint="topleft" relativeTo="$parent"><AbsPoint x="0" y="0"/></Anchor><Anchor point="bottomright" relativePoint="bottomright" relativeTo="$parent"><AbsPoint x="0" y="0"/></Anchor></Anchors>
+	<TintColor r="0" g="0" b="0" a="0.5"/>						
+	</FullResizeImage>			 	
+	-->
+         </Windows>
+				 
+      </Window>
+
+       <Window name="GuardRange_Window2" inherits="GuardRange_Window0" movable="false">
+            <Anchors>
+                <Anchor point="bottomleft" relativePoint="topleft" relativeTo="GuardRange_Window">
+                    <AbsPoint x="5" y="0" />
+                </Anchor>
+            </Anchors>
+        </Window>
+
+	  
+   </Windows>
+</Interface>
